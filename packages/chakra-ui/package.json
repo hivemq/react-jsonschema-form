@@ -1,42 +1,10 @@
 {
-  "name": "@rjsf/chakra-ui",
-  "version": "5.24.8",
+  "name": "@hivemq/rjsf-chakra-ui",
+  "repository": "https://github.com/hivemq/react-jsonschema-form",
+  "version": "5.27.0",
   "description": "Chakra UI theme, fields, and widgets for react-jsonschema-form",
-  "main": "dist/index.js",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    },
-    "./lib": {
-      "require": "./dist/index.js",
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    },
-    "./lib/*.js": {
-      "require": "./dist/*.js",
-      "import": "./lib/*.js",
-      "types": "./lib/*.d.ts"
-    },
-    "./dist": {
-      "require": "./dist/index.js",
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    },
-    "./dist/*.js": {
-      "require": "./dist/*.js",
-      "import": "./lib/*.js",
-      "types": "./lib/*.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "lib",
-    "src"
-  ],
+  "module": "dist/chakra-ui.esm.js",
+  "files": ["dist", "lib", "src"],
   "scripts": {
     "build:ts": "tsc -b tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "build:cjs": "esbuild ./src/index.ts --bundle --outfile=dist/index.js --sourcemap --packages=external --format=cjs",
@@ -53,9 +21,7 @@
     "type-check": "tsc --noEmit"
   },
   "lint-staged": {
-    "{src,test}/**/*.ts?(x)": [
-      "eslint --fix"
-    ]
+    "{src,test}/**/*.ts?(x)": ["eslint --fix"]
   },
   "engineStrict": false,
   "engines": {
@@ -71,7 +37,7 @@
     "lucide-react": "^0.488.0"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "Jonathan Blair <jonathanbblair@gmail.com>",
   "contributors": [
